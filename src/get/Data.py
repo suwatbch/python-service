@@ -37,14 +37,14 @@ def editorder():
     except Exception as e:
         return jsonify(status='Fail', msg=str(e))
     
-@Data.route('deleteorder', methods=['POST'])
-def deleteorder():
-    try:
-        data = request.json
-        DataHelper.deleteorder(data['tracking_no'])
-        return jsonify(status='Success')
-    except Exception as e:
-        return jsonify(status='Fail', msg=str(e))
+# @Data.route('deleteorder', methods=['POST'])
+# def deleteorder():
+#     try:
+#         data = request.json
+#         DataHelper.deleteorder(data['tracking_no'])
+#         return jsonify(status='Success')
+#     except Exception as e:
+#         return jsonify(status='Fail', msg=str(e))
 
 @Data.route('test', methods=['POST'])
 def test():
