@@ -1,15 +1,14 @@
-version: '3'
+version: '3.8'
 
 services:
   python-service:
     image: python-service
-    restart: always
+    restart: unless-stopped
     ports:
       - "5000:5000"
 
   nginx:
     image: nginx:latest
-    # container_name: nginx
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./certs:/etc/ssl/certs
